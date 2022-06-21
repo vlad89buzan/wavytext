@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css?_v=20220621155249' rel='stylesheet'>
+	<link rel="stylesheet" href="css/style.min.css?_v=20220621155249">
+	<title>Главная</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		
+		<main>
+			<div class="wavy">loading...</div>
+		</main>
+		
+	</div>
+	<script>
+		makeTextWavy('.wavy')
+		function makeTextWavy(selector) {
+			const wavyText = document.querySelectorAll(selector);
+
+			wavyText.forEach(text => {
+				text.innerHTML = text.innerHTML
+					.split('')
+					.map((letter, index) => `<span style='--i:${index + 1}'>${letter}</span>`)
+					.join("");
+			})
+		}
+
+
+	</script>
+
+</body>
+
+</html>
